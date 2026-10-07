@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "x402-btc-radar",
+  "version": "0.1.0",
+  "description": "Pay-per-call crypto research tools over x402 (Base USDC): token risk / honeypot check for Base & BSC, Bitcoin new-project radar (BRC-20, Runes, Alkanes), project deep-dives. Callers pay from their own wallet; built-in payee/network/asset checks and a per-call spend cap.",
+  "author": { "name": "jinli-x402" },
+  "license": "MIT",
+  "keywords": ["x402", "mcp", "bitcoin", "brc-20", "runes", "token-risk", "honeypot", "rug-check", "base", "usdc"]
+}

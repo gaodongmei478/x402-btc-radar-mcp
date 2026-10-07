@@ -1,0 +1,30 @@
+{
+  "name": "x402-btc-radar-mcp",
+  "version": "0.1.0",
+  "description": "MCP server + agent skill for the BTC Radar / Token Risk x402 paid API (Base USDC). Callers pay with their own wallet.",
+  "type": "module",
+  "bin": { "x402-btc-radar-mcp": "dist/btc-radar-mcp.mjs" },
+  "files": ["dist/btc-radar-mcp.mjs", "README.md", "LICENSE"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "typecheck": "tsc -p . --noEmit",
+    "build": "esbuild src/server.ts --bundle --platform=node --format=esm --target=node20 --outfile=dist/btc-radar-mcp.mjs --banner:js=\"#!/usr/bin/env node\nimport { createRequire as __cr } from 'node:module'; const require = __cr(import.meta.url);\" --legal-comments=none --minify",
+    "test": "tsx --test test/*.test.ts",
+    "smoke": "node scripts/smoke-mcp.mjs"
+  },
+  "keywords": ["mcp", "x402", "bitcoin", "brc-20", "runes", "token-risk", "honeypot", "base", "usdc", "agent-plugin"],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@x402/core": "^2.28.0",
+    "@x402/evm": "^2.28.0",
+    "viem": "^2.57.3",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.0"
+  }
+}
